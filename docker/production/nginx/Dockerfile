@@ -37,5 +37,5 @@ COPY --from=builder /var/www/public /var/www/public
 WORKDIR /var/www/public
 
 # Expose port 80 and start Nginx
-EXPOSE 80
+EXPOSE 81
 CMD ["nginx", "-g", "daemon off;"]
