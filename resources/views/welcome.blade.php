@@ -8,6 +8,13 @@
 
     </head>
     <body>
+        <?php
+        use App\Filament\Resources\TaskResource;
+        ?>
+        </br>
+        <b><a href="<?php echo TaskResource::getUrl();?>">Перейти в панель Filament</a></b>
+        </br>
+        </br>
         <form method="POST" action="{{ route('tasks.store') }}" >
             @csrf
             <label for="title">Заголовок</label></br>
@@ -68,11 +75,11 @@
             <button type="submit" id="putSubmitButton">Изменить задачу</button>
         </form>
 
-        
-        
+
+
         <form id="delById" method="POST" action="/api/tasks/1">
             @csrf
-            @method('DELETE') 
+            @method('DELETE')
             <input type="number" id="delInputId" name="delInputId" value="1"/>
             <button type="submit" id="delSubmitButton">Удалить задачу</button>
         </form>
@@ -97,10 +104,10 @@
 
                 function putUpdateValue(e) {
                     putLink.action = "/api/tasks/"+e.target.value;
-                }                
+                }
                 function delUpdateValue(e) {
                     delLink.action = "/api/tasks/"+e.target.value;
-                }                    
+                }
             });
         </script>
     </body>
